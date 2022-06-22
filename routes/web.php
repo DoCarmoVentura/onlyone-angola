@@ -2,6 +2,35 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
+Route::get('/', function () {
+    return redirect('login');
+})->name("principal");
+
+Route::get('/admin/index', function () {
+    // echo 'Raul'; exit;
+    if (Auth::check()) {
+
+        return view('admin.index');
+    } else {
+        return Redirect::to('onlyone-angola/login');
+    }
+})->name("principal");
+
+Route::get('/logout', function () {
+    Auth::logout();
+    return Redirect::to('onlyone-angola/login');
+});
+Route::get('/onlyone-angola/login', function () {
+    if (Auth::check()) {
+        return redirect('home');
+    }
+
+    return view('sitelogin');
+});
+
+
 Route::get('/', 'App\Http\Controllers\PrincipalController@inicio')->name('site.principal');
 
 Route::get('/sobre-nos', 'App\Http\Controllers\SobreNosController@SobreNos')->name('site.sobrenos');
@@ -29,3 +58,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
