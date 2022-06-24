@@ -1,9 +1,9 @@
-@extends('site.layouts.app')
+@extends('layouts.appSite')
 
 @section('conteudo')
     <!-- Navbar Start -->
     <div class="container-fluid position-relative p-0">
-      
+
         <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
             <div class="row py-5">
                 <div class="col-12 pt-lg-5 mt-lg-5 text-center">
@@ -49,13 +49,14 @@
                         <p> {{ $produto->preco }}</h1>
                         <p> {{ $produto->link }}</h1>
                         <p> {{ $produto->descricao }}</p>
-                        
+                        <img src="{{asset('storage')}}/{{ $produto->imagem}}" alt="" srcset="">
+
                     </div>
                     <!-- Blog Detail End -->
-    
+
                 </div>
-    
-        
+
+
             </div>
         </div>
     </div>
@@ -81,9 +82,9 @@
         </div>
     </div>
     <!-- Vendor End -->
-    
 
-    
+
+
     @endsection
 
 
