@@ -1,4 +1,4 @@
-@extends('site.layouts.app')
+@extends('layouts.appSite')
 
     @section('conteudo')
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -244,7 +244,7 @@
                         </a>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -460,7 +460,7 @@
                             <div class="d-flex mb-3">
                                 <small><i class="far fa-money text-primary me-2"></i>Preço: 100.000,00</small>
                                 <small class="me-3">Link: produto1.com </small>
-                                
+
                             </div>
                             <h4 class="mb-3">Produto 1</h4>
                             <p>Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p>
@@ -528,7 +528,6 @@
     </div>
     <!-- Vendor End -->
 
-    
 
-    @endsection 
-    
+
+    @endsection

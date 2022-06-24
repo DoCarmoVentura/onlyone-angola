@@ -1,8 +1,8 @@
-@extends('site.layouts.app')
+@extends('layouts.appSite')
 @section('conteudo')
 
     <div class="container-fluid position-relative p-0">
-       
+
 
        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
            <div class="row py-5">
@@ -16,7 +16,7 @@
        </div>
    </div>
 
-   
+
     <!-- Service Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -32,7 +32,7 @@
                         </div>
                         <h4 class="mb-3">Reparação e manutensão</h4>
                         <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
@@ -42,7 +42,7 @@
                         </div>
                         <h4 class="mb-3">Agência de Viagem</h4>
                         <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
@@ -52,7 +52,7 @@
                         </div>
                         <h4 class="mb-3">Encubadora e Ração</h4>
                         <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
@@ -62,12 +62,12 @@
                         </div>
                         <h4 class="mb-3">Serviço 3 </h4>
                         <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
                     <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        
+
                         <h4 class="mb-3">Serviço 4</h4>
                         <p class="m-0">Amet justo dolor lorem kasd amet magna sea stet eos vero lorem ipsum dolore sed</p>
                         <a class="btn btn-lg btn-primary rounded" href="">
@@ -149,7 +149,7 @@
     </div>
     <!-- Testimonial End -->
 
-    
+
     <!-- Vendor Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5 mb-5">
@@ -169,5 +169,4 @@
         </div>
     </div>
     <!-- Vendor End -->
-@endsection 
-    
+@endsection

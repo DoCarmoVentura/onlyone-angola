@@ -1,9 +1,9 @@
-@extends('site.layouts.app')
+@extends('layouts.appSite')
 @section('conteudo')
 
 
     <div class="container-fluid position-relative p-0">
-       
+
 
         <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
             <div class="row py-5">
@@ -56,7 +56,7 @@
         </div>
     </div>
     <!-- About End -->
- 
+
     <!-- Team Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -141,9 +141,8 @@
         </div>
     </div>
     <!-- Vendor End -->
-    
 
-    
 
-@endsection 
-    
+
+
+@endsection
