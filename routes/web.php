@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', 'App\Http\Controllers\PrincipalController@inicio')->name('site.principal');
+Route::get('/',  [App\Http\Controllers\PrincipalController::class, 'inicio'])->name('site.principal');
 
 Route::get('/sobre-nos', 'App\Http\Controllers\SobreNosController@SobreNos')->name('site.sobrenos');
 
@@ -14,7 +14,6 @@ Route::get('/servicos', 'App\Http\Controllers\ServicoController@Servicos')->name
 
 Route::get('/contactos', 'App\Http\Controllers\ContactoController@Contactos')->name('site.contactos');
 
-Route::get('/login', 'App\Http\Controllers\LoginController@Login')->name('site.login');
 
 Route::resource('produtos', App\Http\Controllers\ProdutoController::class);
 
