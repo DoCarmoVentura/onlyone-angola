@@ -2,38 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-    // echo 'Raul'; exit;
-
-
-Route::get('/', function () {
-   return view('site.principal');
-})->name("principal");
-
-/*Route::get('/admin/index', function () {
-    // echo 'Raul'; exit;
-    echo 'Raul1';exit;
-
-    if (Auth::check()) {
-
-        return view('admin.index');
-    } else {
-        return Redirect::to('onlyone-angola/login');
-    }
-})->name("principal");
-
-Route::get('/logout', function () {
-    Auth::logout();
-    return Redirect::to('onlyone-angola/login');
-});
-Route::get('/onlyone-angola/login', function () {
-    echo 'Raul1';exit;
-
-    if (Auth::check()) {
-        return redirect('home');
-    }
-
-    return view('site.login');
-});*/
 
 
 Route::get('/', 'App\Http\Controllers\PrincipalController@inicio')->name('site.principal');
@@ -46,7 +14,7 @@ Route::get('/servicos', 'App\Http\Controllers\ServicoController@Servicos')->name
 
 Route::get('/contactos', 'App\Http\Controllers\ContactoController@Contactos')->name('site.contactos');
 
-Route::get('/login', 'App\Http\Controllers\LoginController@Login')->name('site.principal');
+Route::get('/login', 'App\Http\Controllers\LoginController@Login')->name('site.login');
 
 Route::resource('produtos', App\Http\Controllers\ProdutoController::class);
 

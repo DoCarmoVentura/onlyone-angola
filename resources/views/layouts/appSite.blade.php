@@ -81,7 +81,7 @@
                     <a href="{{route('site.contactos')}}" class="nav-item nav-link">Contactos</a>
                 </div>
                 <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
-                <a href="{{route('site.principal')}}" class="btn btn-primary py-2 px-4 ms-3">Login</a>
+                <a href="{{route('site.login')}}" class="btn btn-primary py-2 px-4 ms-3">Login</a>
             </div>
         </nav>
         @yield('conteudo')
