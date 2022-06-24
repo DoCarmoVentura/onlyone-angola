@@ -15,7 +15,7 @@ class ProdutoController extends Controller
     public function index()
     {
         $produtos = Produto::latest()->paginate(5);
-    
+
         return view('produtos.index',compact('produtos'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -23,11 +23,11 @@ class ProdutoController extends Controller
     public function produtos()
     {
         $produtos = Produto::latest()->paginate(5);
-    
+
         return view('produtos.produtos',compact('produtos'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-     
+
     /**
      * Show the form for creating a new resource.
      *
@@ -37,7 +37,7 @@ class ProdutoController extends Controller
     {
         return view('produtos.create');
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -46,6 +46,8 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
+
+        $dados = $request->all();
         $request->validate([
             'nome' => 'required',
             'descricao' => 'required',
@@ -54,13 +56,23 @@ class ProdutoController extends Controller
             'link' => '',
 
         ]);
-    
-        Produto::create($request->all());
-     
+         $produto = new Produto();
+         $produto->nome = $dados['nome'];
+         $produto->descricao = $dados['descricao'];
+         $produto->preco = $dados['preco'];
+         $produto->link = $dados['link'];
+         //$produto->mostra_pg_inicial = 1;
+
+        if ($request->imagem) {
+            $path = $request->file("imagem")->store("fotos", "public");
+            $produto->imagem = $path;
+            $produto->save();
+        }
+
         return redirect()->route('produtos.index')
                         ->with('success','Produto criado.');
     }
-     
+
     /**
      * Display the specified resource.
      *
@@ -70,8 +82,8 @@ class ProdutoController extends Controller
     public function show(Produto $produto)
     {
         return view('produtos.show',compact('produto'));
-    } 
-     
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -82,7 +94,7 @@ class ProdutoController extends Controller
     {
         return view('produtos.edit',compact('produto'));
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -100,13 +112,13 @@ class ProdutoController extends Controller
             'link' => '',
 
         ]);
-    
+
         $produto->update($request->all());
-    
+
         return redirect()->route('produtos.index')
                         ->with('success','Produto Actualizado');
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *
@@ -116,7 +128,7 @@ class ProdutoController extends Controller
     public function destroy(Produto $produto)
     {
         $produto->delete();
-    
+
         return redirect()->route('produtos.index')
                         ->with('success','Produto Eliminado');
     }

@@ -1,5 +1,5 @@
-@extends('site.layouts.app')
- 
+@extends('layouts.appSite')
+
 @section('conteudo')
 <div class="container-fluid position-relative p-0">
     <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
@@ -31,7 +31,7 @@
                             <div class="p-4">
                                 <div class="d-flex mb-3">
                                     <small class="me-3"><i class="far fa-user text-primary me-2"></i>Preço: {{ $produto->preco }}</small>
-                                    
+
                                 </div>
                                 <h4 class="mb-3">{{ $produto->nome }}</h4>
                                 <a href="{{ $produto->link }}">Link: {{ $produto->link }}</a>
@@ -40,9 +40,9 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     @endforeach
-                    
+
                     <div class="col-12 wow slideInUp" data-wow-delay="0.1s">
                         <nav aria-label="Page navigation">
                           <ul class="pagination pagination-lg m-0">
@@ -92,11 +92,11 @@
                 </div>
                 <!-- Category End -->
 
-               
 
-               
 
-            
+
+
+
                 <!-- Plain Text End -->
             </div>
             <!-- Sidebar End -->

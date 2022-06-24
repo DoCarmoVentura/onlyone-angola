@@ -1,5 +1,5 @@
 @extends('produtos.layout')
-  
+
 @section('conteudo')
 <div class="row">
     <div class="col-lg-12 margin-tb">
@@ -11,7 +11,7 @@
         </div>
     </div>
 </div>
-   
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <strong>Ups!</strong> Ocorreram alguns problemas com sua entrada.<br><br>
@@ -22,10 +22,10 @@
         </ul>
     </div>
 @endif
-   
-<form action="{{ route('produtos.store') }}" method="POST">
+
+<form action="{{ route('produtos.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
-  
+
      <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
@@ -57,11 +57,11 @@
                 <input type="file" name="imagem" class="form-control" placeholder="Imagem do produto">
             </div>
         </div>
-       
+
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Gravar</button>
         </div>
     </div>
-   
+
 </form>
 @endsection

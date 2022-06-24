@@ -18,6 +18,7 @@ Route::get('/contactos', 'App\Http\Controllers\ContactoController@Contactos')->n
 Route::resource('produtos', App\Http\Controllers\ProdutoController::class);
 
 Route::get('produtos.produtos', 'App\Http\Controllers\ProdutoController@produtos')->name('produtos.produtos');
+Route::get('produtos.produtos', 'App\Http\Controllers\ProdutoController@produtos')->name('produtos.produtos');
 
 
 
